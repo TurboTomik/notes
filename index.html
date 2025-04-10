@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - Notes</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    
+  <div class="container">
+    <header>
+      <img src="logo.png" alt="Logo" class="logo" />
+      <h1>Welcome to Notes App</h1>
+      <p class="user-info">Login as: <span class="username">tomik333</span></p>
+    </header>
+
+    <nav class="main-nav">
+      <a href="create-note.html" class="nav-link">📝 Create Your Note</a>
+      <a href="users-notes.html" class="nav-link">📄 See Users Notes</a>
+      <a href="my-notes.html" class="nav-link">📄 My Notes</a>
+      <a href="signin.html" class="nav-link">🔐 Sign In</a>
+      <a href="signup.html" class="nav-link">🧾 Sign Up</a>
+      <a href="" class="nav-link">🔐 Log Out</a>
+    </nav>
+
+    <footer>
+      <p class="notes-quantity">Notes: 34</p>
+      <p class="notes-quantity">Private: 20 Public: 14</p>
+      <p>&copy; 2025 Notes App. All rights reserved.</p>
+    </footer>
+  </div>
 </body>
 </html>

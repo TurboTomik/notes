@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Notes - Notes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>My Notes</h1>
+    </header>
+
+    <section class="notes-feed">
+      <div class="note-card" data-visibility="private">
+        <h3>Shop list</h2>
+          <p class="note-text">Remember to buy groceries after work.</p>
+          <span class="note-visibility">Private</span>
+          <a href="/edit-note.html"><span class="note-change">Change</span></a>
+      </div>
+
+      <div class="note-card" data-visibility="public">
+        <h3>My App</h2>
+          <p class="note-text">Started building my own note-taking app today! 🚀</p>
+          <span class="note-visibility">Public</span>
+          <a href="/edit-note.html"><span class="note-change">Change</span></a>
+      </div>
+
+      <div class="note-card" data-visibility="private">
+        <h3>Don't Forget </h2>
+          <p class="note-text">Meeting notes: finalize mockups and send updates to team.</p>
+          <span class="note-visibility">Private</span>
+          <a href="/edit-note.html"><span class="note-change">Change</span></a>
+      </div>
+    </section>
+
+    <section class="pagination">
+      <button class="prev-page" disabled>Previous</button>
+      <span class="page-number">Page 1 of 5</span>
+      <button class="next-page">Next</button>
+    </section>
+
+    <footer>
+      <a href="/">To main page</a>
+      <p>&copy; 2025 Notes App. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+
+</html>

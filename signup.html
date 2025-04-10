@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - Notes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Create an Account</h1>
+    </header>
+
+    <form class="auth-form" action="#" method="POST">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Your nickname" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Create a strong password" required />
+        <input type="password" id="password" name="password" placeholder="Type password again" required />
+      </div>
+
+      <button type="submit" class="submit-btn">Sign Up</button>
+    </form>
+
+    <p class="switch-link">Already have an account? <a href="signin.html">Sign in here</a></p>
+
+    <footer>
+      <a href="/">To main page</a>
+      <p>&copy; 2025 Notes App. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>

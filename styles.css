@@ -1,0 +1,322 @@
+/* -------------------- RESET & BASE -------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.user-info {
+  font-size: 14px;
+  color: #555;
+}
+
+.username {
+  font-weight: bold;
+  color: #3498db;
+}
+
+
+/* -------------------- CONTAINER -------------------- */
+.container {
+  width: 90%;
+  max-width: 800px;
+  background: #fff;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* -------------------- LOGO & HEADER -------------------- */
+.logo {
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+header,
+footer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #0275d8;
+}
+
+/* -------------------- NAVIGATION -------------------- */
+.main-nav {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  background: #3498db;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.nav-link:hover {
+  background: #2980b9;
+}
+
+/* -------------------- AUTH FORMS -------------------- */
+.auth-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.visibility label {
+  margin-bottom: 0px;
+}
+
+.form-group input {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.form-group input[type="radio"] {
+  margin-right: 3px;
+}
+
+.submit-btn,
+button[type="submit"] {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover,
+button[type="submit"]:hover {
+  background: #2980b9;
+}
+
+/* -------------------- SWITCH LINKS -------------------- */
+.switch-link {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.switch-link a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.switch-link a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+  font-size: 14px;
+  color: #aaa;
+  margin-top: 30px;
+}
+
+footer a {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0275d8
+}
+
+.notes-quantity {
+  font-size: 16px;
+  color: #8d8d8d;
+}
+
+/* -------------------- NOTES (Public + My Notes) -------------------- */
+.notes-feed,
+.notes-list {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.note-card,
+.note {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px 20px;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.note-card:hover .note-change {
+  display: inline-block;
+}
+
+.note-card h3 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.note-text,
+.note .note-content {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.note-author {
+  font-size: 14px;
+  color: #888;
+}
+
+.note-visibility {
+  font-size: 12px;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.note-change {
+  display: none;
+  font-size: 12px;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #0275d8;
+}
+
+.note-card[data-visibility="public"] .note-visibility,
+.note[data-visibility="public"] .note-visibility {
+  background-color: #27ae60;
+}
+
+.note-card[data-visibility="private"] .note-visibility,
+.note[data-visibility="private"] .note-visibility {
+  background-color: #c0392b;
+}
+
+/* -------------------- NOTE FORM -------------------- */
+.note-form {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.note-form h2,
+.notes-list h2 {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  color: #555;
+}
+
+.note-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.note-detail .note-card {
+  padding: 25px;
+}
+
+.note-meta {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.note-meta p {
+  margin: 5px 0;
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #2980b9;
+}
+
+.pagination .page-number {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Disable buttons when on the first or last page */
+.pagination .prev-page:disabled,
+.pagination .next-page:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
