@@ -5,9 +5,11 @@
   <header>
     <img src="{% static 'logo.png' %}" alt="Logo" class="logo" />
     <h1>Welcome to Notes App</h1>
-    <p class="user-info">
-      Login as: <span class="username">user69</span>
-    </p>
+    {% if user.is_authenticated %}
+      <p class="user-info">
+        Login as: <span class="username">{{ user.username }}</span>
+      </p>
+    {% endif %}
   </header>
 
   <nav class="main-nav">
