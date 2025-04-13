@@ -1,11 +1,12 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block content %}
   <header>
     <h1>Create an Account</h1>
   </header>
 
-  <form class="auth-form" action="#" method="POST">
+  <form class="auth-form" action="{% url 'users:sign-up' %}" method="POST">
+    {% csrf_token %}
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" id="username" name="username" placeholder="Your nickname" required />
