@@ -13,12 +13,16 @@
   </header>
 
   <nav class="main-nav">
-    <a href="" class="nav-link">📝 Create Your Note</a>
-    <a href="" class="nav-link">📄 See Users Notes</a>
-    <a href="" class="nav-link">📄 My Notes</a>
-    <a href="" class="nav-link">🔐 Sign In</a>
-    <a href="{% url 'users:sign-up' %}" class="nav-link">🧾 Sign Up</a>
-    <a href="" class="nav-link">🔐 Log Out</a>
+    {% if user.is_authenticated %}
+      <a href="" class="nav-link">📝 Create Your Note</a>
+      <a href="" class="nav-link">📄 See Users Notes</a>
+      <a href="" class="nav-link">📄 My Notes</a>
+      <a href="" class="nav-link">🔐 Log Out</a>
+    {% else %}
+      <a href="" class="nav-link">📄 See Users Notes</a>
+      <a href="" class="nav-link">🔐 Sign In</a>
+      <a href="{% url 'users:sign-up' %}" class="nav-link">🧾 Sign Up</a>
+    {% endif %}
   </nav>
 
   <footer>
