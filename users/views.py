@@ -22,3 +22,6 @@ def sign_up(request):
     }
 
     return render(request, "users/signup.html", context)
+
+def sign_in(request):
+    return render(request, "users/signin.html")
