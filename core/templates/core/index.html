@@ -18,6 +18,9 @@
       <a href="" class="nav-link">📄 See Users Notes</a>
       <a href="" class="nav-link">📄 My Notes</a>
       <a href="{% url 'users:logout' %}" class="nav-link">🔐 Log Out</a>
+      {% if user.is_admin or user.is_staff %}
+        <a href="{% url 'admin:index' %}" class="nav-link">🔑 Admin Panel</a>
+      {% endif %}
     {% else %}
       <a href="" class="nav-link">📄 See Users Notes</a>
       <a href="{% url 'users:sign-in' %}" class="nav-link">🔐 Sign In</a>
