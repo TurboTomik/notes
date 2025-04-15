@@ -1,5 +1,5 @@
 from django.contrib import auth
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
@@ -44,3 +44,8 @@ def sign_in(request):
     }
 
     return render(request, "users/signin.html", context)
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect(reverse("core:index"))
