@@ -18,6 +18,7 @@ def sign_up(request):
         form = UserSignupForm()
 
     context = {
+        "title": "Sign Up - Notes",
         "form": form,
     }
 
@@ -40,6 +41,7 @@ def sign_in(request):
         form = UserSigninForm()
 
     context = {
+        "title": "Sign In - Notes",
         "form": form,
     }
 
