@@ -7,16 +7,17 @@
 
   <main>
     <section class="note-form">
-      <form id="noteForm">
+      <form id="noteForm" action="{% url 'notes:create-note' %}" method='POST'>
+        {% csrf_token %}
         <div class="form-group">
           <label for="noteText">Note:</label>
           <input type="text" name="title" placeholder="Write title for the note..." required />
-          <textarea id="noteText" name="noteText" rows="4" placeholder="Write your note here..." required></textarea>
+          <textarea id="noteText" name="content" rows="4" placeholder="Write your note here..." required></textarea>
         </div>
         <div class="form-group visibility">
           <span>Visibility:</span>
-          <label><input type="radio" name="visibility" value="private" checked />Private</label>
-          <label><input type="radio" name="visibility" value="public" />Public</label>
+          <label><input type="radio" name="is_public" value="False" checked />Private</label>
+          <label><input type="radio" name="is_public" value="True" />Public</label>
         </div>
         <button type="submit">Save Note</button>
       </form>
