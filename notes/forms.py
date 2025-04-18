@@ -11,3 +11,13 @@ class NoteForm(forms.ModelForm):
             "content",
             "is_public",
         )
+
+
+class EditNoteForm(forms.ModelForm):
+    class Meta:
+        model = Note
+        fields = (
+            "title",
+            "content",
+            "is_public",
+        )
