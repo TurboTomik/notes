@@ -33,3 +33,11 @@ def my_notes(request):
         "notes": notes,
     }
     return render(request, "notes/my-notes.html", context)
+
+
+@login_required(login_url="/user/sign-in")
+def edit_note(request, note_id):
+    context = {
+        "title": "Edit Note - Notes",
+    }
+    return render(request, "notes/edit-note.html", context)
