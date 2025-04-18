@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <header>
+    <h1>My Notes</h1>
+  </header>
+
+  <section class="notes-feed">
+    {% for note in notes %}
+      <div class="note-card" data-visibility={% if note.is_public %}"public"{% else %}"private"{% endif %}>
+        <h3>{{ note.title }}</h3>
+        <p class="note-text">{{ note.content }}</p>
+        <span class="note-visibility">{% if note.is_public %}Public{% else %}Private{% endif %}</span>
+        <a href="#"><span class="note-change">Change</span></a>
+      </div>
+    {% endfor %}
+  </section>
+
+  <section class="pagination">
+    <button class="prev-page" disabled>Previous</button>
+    <span class="page-number">Page 1 of 5</span>
+    <button class="next-page">Next</button>
+  </section>
+
+  <footer>
+    <a href="{% url 'core:index' %}">To main page</a>
+    <p>&copy; 2025 Notes App. All rights reserved.</p>
+  </footer>
+{% endblock %}
