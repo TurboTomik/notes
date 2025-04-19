@@ -28,7 +28,7 @@ def create_note(request):
 
 @login_required(login_url="/user/sign-in")
 def my_notes(request):
-    notes = Note.objects.filter(user_id=request.user.id)
+    notes = Note.objects.filter(user_id=request.user.id).order_by("-updated_at")
     paginator = Paginator(notes, 5)
     
     page_number = request.GET.get("page", 1)
