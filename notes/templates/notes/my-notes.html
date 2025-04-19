@@ -6,7 +6,7 @@
   </header>
 
   <section class="notes-feed">
-    {% for note in notes %}
+    {% for note in page_obj %}
       <div class="note-card" data-visibility={% if note.is_public %}"public"{% else %}"private"{% endif %}>
         <h3>{{ note.title }}</h3>
         <p class="note-text">{{ note.content }}</p>
@@ -17,9 +17,15 @@
   </section>
 
   <section class="pagination">
-    <button class="prev-page" disabled>Previous</button>
-    <span class="page-number">Page 1 of 5</span>
-    <button class="next-page">Next</button>
+    <a href="?page={% if page_obj.has_previous %}{{ page_obj.previous_page_number }}{% endif %}">
+      <button class="prev-page" {% if not page_obj.has_previous %}disabled{% endif %} >Previous</button>
+    </a>
+
+    <span class="page-number">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+    <a href="?page={% if page_obj.has_next %}{{ page_obj.next_page_number }}{% endif %}">
+      <button class="next-page" {% if not page_obj.has_next %}disabled{% endif %} >Next</button>
+    </a>
   </section>
 
   <footer>

@@ -1,9 +1,10 @@
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, redirect, render
 
 from notes.models import Note
 
-from .forms import NoteForm, EditNoteForm
+from .forms import EditNoteForm, NoteForm
 
 
 @login_required(login_url="/user/sign-in")
@@ -28,9 +29,13 @@ def create_note(request):
 @login_required(login_url="/user/sign-in")
 def my_notes(request):
     notes = Note.objects.filter(user_id=request.user.id)
+    paginator = Paginator(notes, 5)
+    
+    page_number = request.GET.get("page", 1)
+    page_obj = paginator.get_page(page_number)
     context = {
         "title": "My Notes - Notes",
-        "notes": notes,
+        "page_obj": page_obj,
     }
     return render(request, "notes/my-notes.html", context)
 
