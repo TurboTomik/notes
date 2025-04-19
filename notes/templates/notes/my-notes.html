@@ -11,7 +11,7 @@
         <h3>{{ note.title }}</h3>
         <p class="note-text">{{ note.content }}</p>
         <span class="note-visibility">{% if note.is_public %}Public{% else %}Private{% endif %}</span>
-        <a href="#"><span class="note-change">Change</span></a>
+        <a href="{% url "notes:edit-note" note.id %}"><span class="note-change">Change</span></a>
       </div>
     {% endfor %}
   </section>
