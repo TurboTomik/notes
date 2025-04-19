@@ -7,23 +7,30 @@
 
   <section class="edit-note-form">
     <form action="#" method="POST">
+      {% csrf_token %}
       <!-- Title -->
       <div class="form-group">
         <label for="note-title">Title</label>
-        <input type="text" id="note-title" name="title" value="" required />
+        <input type="text" id="note-title" name="title" value="{{ form.title.value }}" required />
       </div>
 
       <!-- Content -->
       <div class="form-group">
         <label for="note-content">Content</label>
-        <textarea id="note-content" name="content" rows="6" required></textarea>
+        <textarea id="note-content" name="content" rows="6" required>{{ form.content.value }}</textarea>
       </div>
 
       <!-- Visibility -->
       <div class="form-group visibility">
         <span>Visibility:</span>
-        <label><input type="radio" name="is_public" value="False" />Private</label>
-        <label><input type="radio" name="is_public" value="True" checked />Public</label>
+        <label>
+          <input type="radio" name="is_public" value="False" {% if form.is_public.value == False %}checked{% endif %} />
+          Private
+        </label>
+        <label>
+          <input type="radio" name="is_public" value="True" {% if form.is_public.value == True %}checked{% endif %} />
+          Public
+        </label>
       </div>
 
       <!-- Submit -->
