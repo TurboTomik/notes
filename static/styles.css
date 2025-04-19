@@ -6,7 +6,7 @@
 }
 
 body {
-  margin: 0;
+  margin: auto;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #f4f4f4;
   color: #333;
@@ -14,7 +14,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .user-info {
@@ -37,6 +37,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   text-align: center;
+  margin: 40px;
 }
 
 /* -------------------- LOGO & HEADER -------------------- */
