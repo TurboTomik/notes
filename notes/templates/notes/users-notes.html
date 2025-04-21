@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <header>
+    <h1>Public Notes</h1>
+  </header>
+
+  <section class="notes-feed">
+    {% for note in page_obj %}
+      <div class="note-card">
+        <h3>{{ note.title }}</h3>
+        <p class="note-text">{{ note.content }}</p>
+        <span class="note-author">By {{ note.user.username }}</span>
+      </div>
+    {% endfor %}
+  </section>
+
+  <section class="pagination">
+    <a href="?page={% if page_obj.has_previous %}{{ page_obj.previous_page_number }}{% endif %}">
+      <button class="prev-page" {% if not page_obj.has_previous %}disabled{% endif %} >Previous</button>
+    </a>
+
+    <span class="page-number">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+    <a href="?page={% if page_obj.has_next %}{{ page_obj.next_page_number }}{% endif %}">
+      <button class="next-page" {% if not page_obj.has_next %}disabled{% endif %} >Next</button>
+    </a>
+  </section>
+
+  <footer>
+    <a href="{% url 'core:index' %}">To main page</a>
+    <p>&copy; 2025 Notes App. All rights reserved.</p>
+  </footer>
+{% endblock %}

@@ -30,7 +30,7 @@ def create_note(request):
 def my_notes(request):
     notes = Note.objects.filter(user_id=request.user.id).order_by("-updated_at")
     paginator = Paginator(notes, 5)
-    
+
     page_number = request.GET.get("page", 1)
     page_obj = paginator.get_page(page_number)
     context = {
@@ -56,3 +56,17 @@ def edit_note(request, note_id):
         "form": form,
     }
     return render(request, "notes/edit-note.html", context)
+
+
+def users_notes(request):
+    notes = Note.objects.filter(is_public=True).order_by("-updated_at")
+    paginator = Paginator(notes, 5)
+
+    page_number = request.GET.get("page", 1)
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        "title": "Users Notes - Notes",
+        "page_obj": page_obj,
+    }
+    return render(request, "notes/users-notes.html", context)
