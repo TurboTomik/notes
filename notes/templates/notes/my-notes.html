@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-{% block content %}
-  <header>
-    <h1>My Notes</h1>
-  </header>
+{% block header %}
+  My Notes
+{% endblock %}
 
+{% block content %}
   <section class="notes-feed">
     {% for note in page_obj %}
       <div class="note-card" data-visibility={% if note.is_public %}"public"{% else %}"private"{% endif %}>

@@ -1,19 +1,12 @@
 {% extends 'base.html' %}
-{% load static %}
+
+{% block header %}
+  Welcome to Notes App
+{% endblock %}
 
 {% block content %}
-  <header>
-    <img src="{% static 'logo.png' %}" alt="Logo" class="logo" />
-    <h1>Welcome to Notes App</h1>
-    {% if user.is_authenticated %}
-      <p class="user-info">
-        Login as: <span class="username">{{ user.username }}</span>
-      </p>
-    {% endif %}
-  </header>
-
   <nav class="main-nav">
-    <a href="{% url "notes:users-notes" %}" class="nav-link">📄 See Users Notes</a>
+    <a href="{% url 'notes:users-notes' %}" class="nav-link">📄 See Users Notes</a>
     {% if user.is_authenticated %}
       <a href="{% url 'notes:create-note' %}" class="nav-link">📝 Create Your Note</a>
       <a href="{% url 'notes:my-notes' %}" class="nav-link">📄 My Notes</a>

@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-{% block content %}
-  <header>
-    <h1>Log Into An Account</h1>
-  </header>
+{% block header %}
+  Log Into An Account
+{% endblock %}
 
+{% block content %}
   <form class="auth-form" action="{% url 'users:sign-in' %}" method="POST">
     {% csrf_token %}
     <div class="form-group">

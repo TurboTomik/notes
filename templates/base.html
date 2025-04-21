@@ -10,6 +10,22 @@
   </head>
   <body>
     <div class="container">
+      <header>
+        {% if index_page %}
+          <img src="{% static 'logo.png' %}" alt="Logo" class="logo" />
+        {% endif %}
+        <h1>
+          {% block header %}
+
+          {% endblock %}
+        </h1>
+        {% if index_page and user.is_authenticated %}
+          <p class="user-info">
+            Login as: <span class="username">{{ user.username }}</span>
+          </p>
+        {% endif %}
+      </header>
+
       {% block content %}
 
       {% endblock %}

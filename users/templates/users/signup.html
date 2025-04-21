@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-{% block content %}
-  <header>
-    <h1>Create an Account</h1>
-  </header>
+{% block header %}
+  Create an Account
+{% endblock %}
 
+{% block content %}
   <form class="auth-form" action="{% url 'users:sign-up' %}" method="POST">
     {% csrf_token %}
     <div class="form-group">

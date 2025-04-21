@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% block content %}
-  <header>
-    <h1>Create a New Note</h1>
-  </header>
+{% block header %}
+  Create a New Note
+{% endblock %}
 
+{% block content %}
   <main>
     <section class="note-form">
-      <form id="noteForm" action="{% url 'notes:create-note' %}" method='POST'>
+      <form id="noteForm" action="{% url 'notes:create-note' %}" method="POST">
         {% csrf_token %}
         <div class="form-group">
           <label for="noteText">Note:</label>
