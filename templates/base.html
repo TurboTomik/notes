@@ -29,6 +29,16 @@
       {% block content %}
 
       {% endblock %}
+
+      <footer>
+        {% if index_page %}
+          <p class="notes-quantity">Notes: 34</p>
+          <p class="notes-quantity">Private: 20 Public: 14</p>
+        {% else %}
+          <a href="{% url 'core:index' %}">To main page</a>
+        {% endif %}
+        <p>&copy; 2025 Notes App. All rights reserved.</p>
+      </footer>
     </div>
   </body>
 </html>
